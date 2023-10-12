@@ -1,4 +1,4 @@
-﻿namespace VoiceAssistant
+namespace VoiceAssistant
 {
     partial class Form1
     {
@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pbxMic1 = new System.Windows.Forms.PictureBox();
             this.pbxMic2 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.speakToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblOptions = new System.Windows.Forms.Label();
+            this.lbxCommands = new System.Windows.Forms.ListBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxMic1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMic2)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -85,13 +89,40 @@
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.optionsToolStripMenuItem.Text = "Options";
-            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.OptionsMenu_Click);
+            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.OptionMenu_Click);
+            // 
+            // lblOptions
+            // 
+            this.lblOptions.AutoSize = true;
+            this.lblOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOptions.Location = new System.Drawing.Point(135, 42);
+            this.lblOptions.Name = "lblOptions";
+            this.lblOptions.Size = new System.Drawing.Size(67, 20);
+            this.lblOptions.TabIndex = 3;
+            this.lblOptions.Text = "Options";
+            // 
+            // lbxCommands
+            // 
+            this.lbxCommands.FormattingEnabled = true;
+            this.lbxCommands.ItemHeight = 16;
+            this.lbxCommands.Location = new System.Drawing.Point(6, 80);
+            this.lbxCommands.Name = "lbxCommands";
+            this.lbxCommands.Size = new System.Drawing.Size(360, 356);
+            this.lbxCommands.TabIndex = 4;
+            this.lbxCommands.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 450);
+            this.Controls.Add(this.lbxCommands);
+            this.Controls.Add(this.lblOptions);
             this.Controls.Add(this.pbxMic1);
             this.Controls.Add(this.pbxMic2);
             this.Controls.Add(this.menuStrip1);
@@ -116,6 +147,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem speakToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.Label lblOptions;
+        private System.Windows.Forms.ListBox lbxCommands;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
